@@ -19,6 +19,6 @@ jobs:
       - name: dump env and git info
         run: |
           set -x
-          printenv | cut -f1 -d'=' | sort
+          printenv | grep -E '^GITHUB_' | sort
           echo
           git log --graph --all --decorate=full --pretty=oneline --abbrev-commit
